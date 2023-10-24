@@ -1,0 +1,17 @@
+<div class="col d-xxl-none">
+  <div class="row row-cols-1 row-cols-lg-3 g-4">
+    {% for comunicado in comunicados %}
+    <div class="col">
+      {% if comunicado.visible == True %}
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ comunicado.titulo }}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad_id.nombre }}</h6>
+          <p class="card-text">{{ comunicado.detalle_corto }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
